@@ -1,13 +1,20 @@
 import { TerraformModule } from "projen-cdktf-hybrid-construct";
 const project = new TerraformModule({
   author: "Ryan Martin",
-  authorAddress: "ryan@vestahealthcare.com",
+  authorAddress: "rlmartin@gmail.com",
   defaultReleaseBranch: "main",
   devDeps: ["projen-cdktf-hybrid-construct"],
   jsiiVersion: "~5.0.0",
   name: "terraform-aws-modules-ecr",
   projenrcTs: true,
   repositoryUrl: "git@github.com:rlmartin-projen/terraform-aws-modules-ecr.git",
+  terraformModules: [
+    {
+      name: "ecr",
+      source: "terraform-aws-modules/ecr/aws",
+      version: "~> 1.0",
+    },
+  ],
 
   // cdktfVersion: "^0.13.0",      /* Minimum target version of this library. */
   // deps: [],                     /* Runtime dependencies of this module. */
