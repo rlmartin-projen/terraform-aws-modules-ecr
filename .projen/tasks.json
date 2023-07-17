@@ -203,7 +203,7 @@
       "description": "Prepare a release from \"main\" branch",
       "env": {
         "RELEASE": "true",
-        "MAJOR": "2"
+        "MAJOR": "0"
       },
       "steps": [
         {
@@ -228,7 +228,7 @@
       "description": "Prepare a release from \"dev\" branch",
       "env": {
         "RELEASE": "true",
-        "MAJOR": "2",
+        "MAJOR": "0",
         "PRERELEASE": "dev"
       },
       "steps": [
@@ -298,19 +298,19 @@
           "exec": "yarn upgrade npm-check-updates"
         },
         {
-          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
+          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='@cdktf/provider-aws,cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
         },
         {
-          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
+          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='@cdktf/provider-aws,cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
         },
         {
-          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
+          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='@cdktf/provider-aws,cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
         },
         {
-          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
+          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='@cdktf/provider-aws,cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
         },
         {
-          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
+          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='@cdktf/provider-aws,cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
         },
         {
           "exec": "yarn install --check-files"

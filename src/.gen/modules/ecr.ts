@@ -131,6 +131,11 @@ export interface EcrConfig extends TerraformModuleUserConfig {
    */
   readonly tags?: { [key: string]: string };
 }
+/**
+ * Defines an Ecr based on a Terraform module
+ *
+ * Docs at Terraform Registry: {@link https://registry.terraform.io/modules/terraform-aws-modules/ecr/aws/~> 1.0 terraform-aws-modules/ecr/aws}
+ */
 export class Ecr extends TerraformModule {
   private readonly inputs: { [name: string]: any } = { }
   public constructor(scope: Construct, id: string, config: EcrConfig = {}) {
