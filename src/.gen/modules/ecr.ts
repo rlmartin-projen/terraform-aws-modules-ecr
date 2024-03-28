@@ -4,138 +4,143 @@ import { TerraformModule, TerraformModuleUserConfig } from 'cdktf';
 import { Construct } from 'constructs';
 export interface EcrConfig extends TerraformModuleUserConfig {
   /**
-   * Determines whether a repository policy will be attached to the repository
-   * @default true
-   */
+  * Determines whether a repository policy will be attached to the repository
+  * true
+  */
   readonly attachRepositoryPolicy?: boolean;
   /**
-   * Determines whether resources will be created (affects all resources)
-   * @default true
-   */
+  * Determines whether resources will be created (affects all resources)
+  * true
+  */
   readonly create?: boolean;
   /**
-   * Determines whether a lifecycle policy will be created
-   * @default true
-   */
+  * Determines whether a lifecycle policy will be created
+  * true
+  */
   readonly createLifecyclePolicy?: boolean;
   /**
-   * Determines whether a registry policy will be created
-   */
+  * Determines whether a registry policy will be created
+  */
   readonly createRegistryPolicy?: boolean;
   /**
-   * Determines whether a registry replication configuration will be created
-   */
+  * Determines whether a registry replication configuration will be created
+  */
   readonly createRegistryReplicationConfiguration?: boolean;
   /**
-   * Determines whether a repository will be created
-   * @default true
-   */
+  * Determines whether a repository will be created
+  * true
+  */
   readonly createRepository?: boolean;
   /**
-   * Determines whether a repository policy will be created
-   * @default true
-   */
+  * Determines whether a repository policy will be created
+  * true
+  */
   readonly createRepositoryPolicy?: boolean;
   /**
-   * Determines whether the registry scanning configuration will be managed
-   */
+  * Determines whether the registry scanning configuration will be managed
+  */
   readonly manageRegistryScanningConfiguration?: boolean;
   /**
-   * Catalog data configuration for the repository
-   * @default [object Object]
-   */
+  * Catalog data configuration for the repository
+  * [object Object]
+  */
   readonly publicRepositoryCatalogData?: any;
   /**
-   * The policy document. This is a JSON formatted string
-   */
+  * The policy document. This is a JSON formatted string
+  */
   readonly registryPolicy?: string;
   /**
-   * List of pull through cache rules to create
-   * @default [object Object]
-   * The property type contains a map, they have special handling, please see {@link cdk.tf/module-map-inputs the docs}
-   */
+  * List of pull through cache rules to create
+  * [object Object]
+  * The property type contains a map, they have special handling, please see {@link cdk.tf/module-map-inputs the docs}
+  */
   readonly registryPullThroughCacheRules?: { [key: string]: { [key: string]: string } };
   /**
-   * The replication rules for a replication configuration. A maximum of 10 are allowed
-   * @default 
-   */
+  * The replication rules for a replication configuration. A maximum of 10 are allowed
+  * 
+  */
   readonly registryReplicationRules?: any;
   /**
-   * One or multiple blocks specifying scanning rules to determine which repository filters are used and at what frequency scanning will occur
-   * @default 
-   */
+  * One or multiple blocks specifying scanning rules to determine which repository filters are used and at what frequency scanning will occur
+  * 
+  */
   readonly registryScanRules?: any;
   /**
-   * the scanning type to set for the registry. Can be either `ENHANCED` or `BASIC`
-   * @default ENHANCED
-   */
+  * the scanning type to set for the registry. Can be either `ENHANCED` or `BASIC`
+  * ENHANCED
+  */
   readonly registryScanType?: string;
   /**
-   * The encryption type for the repository. Must be one of: `KMS` or `AES256`. Defaults to `AES256`
-   */
+  * The encryption type for the repository. Must be one of: `KMS` or `AES256`. Defaults to `AES256`
+  */
   readonly repositoryEncryptionType?: string;
   /**
-   * If `true`, will delete the repository even if it contains images. Defaults to `false`
-   */
+  * If `true`, will delete the repository even if it contains images. Defaults to `false`
+  */
   readonly repositoryForceDelete?: boolean;
   /**
-   * Indicates whether images are scanned after being pushed to the repository (`true`) or not scanned (`false`)
-   * @default true
-   */
+  * Indicates whether images are scanned after being pushed to the repository (`true`) or not scanned (`false`)
+  * true
+  */
   readonly repositoryImageScanOnPush?: boolean;
   /**
-   * The tag mutability setting for the repository. Must be one of: `MUTABLE` or `IMMUTABLE`. Defaults to `IMMUTABLE`
-   * @default IMMUTABLE
-   */
+  * The tag mutability setting for the repository. Must be one of: `MUTABLE` or `IMMUTABLE`. Defaults to `IMMUTABLE`
+  * IMMUTABLE
+  */
   readonly repositoryImageTagMutability?: string;
   /**
-   * The ARN of the KMS key to use when encryption_type is `KMS`. If not specified, uses the default AWS managed key for ECR
-   */
+  * The ARN of the KMS key to use when encryption_type is `KMS`. If not specified, uses the default AWS managed key for ECR
+  */
   readonly repositoryKmsKey?: string;
   /**
-   * The ARNs of the Lambda service roles that have read access to the repository
-   * @default 
-   */
+  * The ARNs of the Lambda service roles that have read access to the repository
+  * 
+  */
   readonly repositoryLambdaReadAccessArns?: string[];
   /**
-   * The policy document. This is a JSON formatted string. See more details about [Policy Parameters](http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html#lifecycle_policy_parameters) in the official AWS docs
-   */
+  * The policy document. This is a JSON formatted string. See more details about [Policy Parameters](http://docs.aws.amazon.com/AmazonECR/latest/userguide/LifecyclePolicies.html#lifecycle_policy_parameters) in the official AWS docs
+  */
   readonly repositoryLifecyclePolicy?: string;
   /**
-   * The name of the repository
-   */
+  * The name of the repository
+  */
   readonly repositoryName?: string;
   /**
-   * The JSON policy to apply to the repository. If not specified, uses the default policy
-   */
+  * The JSON policy to apply to the repository. If not specified, uses the default policy
+  */
   readonly repositoryPolicy?: string;
   /**
-   * The ARNs of the IAM users/roles that have read access to the repository
-   * @default 
-   */
+  * A map of IAM policy [statements](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document#statement) for custom permission usage
+  * [object Object]
+  */
+  readonly repositoryPolicyStatements?: any;
+  /**
+  * The ARNs of the IAM users/roles that have read access to the repository
+  * 
+  */
   readonly repositoryReadAccessArns?: string[];
   /**
-   * The ARNs of the IAM users/roles that have read/write access to the repository
-   * @default 
-   */
+  * The ARNs of the IAM users/roles that have read/write access to the repository
+  * 
+  */
   readonly repositoryReadWriteAccessArns?: string[];
   /**
-   * The type of repository to create. Either `public` or `private`
-   * @default private
-   */
+  * The type of repository to create. Either `public` or `private`
+  * private
+  */
   readonly repositoryType?: string;
   /**
-   * A map of tags to add to all resources
-   * @default [object Object]
-   * The property type contains a map, they have special handling, please see {@link cdk.tf/module-map-inputs the docs}
-   */
+  * A map of tags to add to all resources
+  * [object Object]
+  * The property type contains a map, they have special handling, please see {@link cdk.tf/module-map-inputs the docs}
+  */
   readonly tags?: { [key: string]: string };
 }
 /**
- * Defines an Ecr based on a Terraform module
- *
- * Docs at Terraform Registry: {@link https://registry.terraform.io/modules/terraform-aws-modules/ecr/aws/~> 1.0 terraform-aws-modules/ecr/aws}
- */
+* Defines an Ecr based on a Terraform module
+*
+* Docs at Terraform Registry: {@link https://registry.terraform.io/modules/terraform-aws-modules/ecr/aws/~> 1.0 terraform-aws-modules/ecr/aws}
+*/
 export class Ecr extends TerraformModule {
   private readonly inputs: { [name: string]: any } = { }
   public constructor(scope: Construct, id: string, config: EcrConfig = {}) {
@@ -167,6 +172,7 @@ export class Ecr extends TerraformModule {
     this.repositoryLifecyclePolicy = config.repositoryLifecyclePolicy;
     this.repositoryName = config.repositoryName;
     this.repositoryPolicy = config.repositoryPolicy;
+    this.repositoryPolicyStatements = config.repositoryPolicyStatements;
     this.repositoryReadAccessArns = config.repositoryReadAccessArns;
     this.repositoryReadWriteAccessArns = config.repositoryReadWriteAccessArns;
     this.repositoryType = config.repositoryType;
@@ -309,6 +315,12 @@ export class Ecr extends TerraformModule {
   }
   public set repositoryPolicy(value: string | undefined) {
     this.inputs['repository_policy'] = value;
+  }
+  public get repositoryPolicyStatements(): any | undefined {
+    return this.inputs['repository_policy_statements'] as any | undefined;
+  }
+  public set repositoryPolicyStatements(value: any | undefined) {
+    this.inputs['repository_policy_statements'] = value;
   }
   public get repositoryReadAccessArns(): string[] | undefined {
     return this.inputs['repository_read_access_arns'] as string[] | undefined;
