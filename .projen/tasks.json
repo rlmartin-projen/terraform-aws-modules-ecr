@@ -126,7 +126,8 @@
       "description": "Runs eslint against the codebase",
       "steps": [
         {
-          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern src test build-tools projenrc .projenrc.ts"
+          "exec": "eslint --ext .ts,.tsx --fix --no-error-on-unmatched-pattern $@ src test build-tools projenrc .projenrc.ts",
+          "receiveArgs": true
         }
       ]
     },
@@ -295,28 +296,13 @@
       },
       "steps": [
         {
-          "exec": "yarn upgrade npm-check-updates"
-        },
-        {
-          "exec": "npm-check-updates --dep dev --upgrade --target=minor --reject='@cdktf/provider-aws,cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
-        },
-        {
-          "exec": "npm-check-updates --dep optional --upgrade --target=minor --reject='@cdktf/provider-aws,cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
-        },
-        {
-          "exec": "npm-check-updates --dep peer --upgrade --target=minor --reject='@cdktf/provider-aws,cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
-        },
-        {
-          "exec": "npm-check-updates --dep prod --upgrade --target=minor --reject='@cdktf/provider-aws,cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
-        },
-        {
-          "exec": "npm-check-updates --dep bundle --upgrade --target=minor --reject='@cdktf/provider-aws,cdktf-cli,cdktf,constructs,jsii-rosetta,jsii,ts-node'"
+          "exec": "npx npm-check-updates@16 --upgrade --target=minor --peer --dep=dev,peer,prod,optional --filter=@types/jest,cdktf-cli,cdktf,eslint-config-prettier,eslint-import-resolver-typescript,eslint-plugin-import,eslint-plugin-prettier,jest,jsii-diff,jsii-pacmak,jsii-rosetta,jsii,prettier,projen,projen-cdktf-hybrid-construct,ts-jest,ts-node,typescript,@cdktf/provider-aws,constructs"
         },
         {
           "exec": "yarn install --check-files"
         },
         {
-          "exec": "yarn upgrade"
+          "exec": "yarn upgrade @types/jest @types/node @typescript-eslint/eslint-plugin @typescript-eslint/parser cdktf-cli cdktf constructs eslint-config-prettier eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-prettier eslint jest jest-junit jsii-diff jsii-docgen jsii-pacmak jsii-rosetta jsii prettier projen projen-cdktf-hybrid-construct standard-version ts-jest ts-node typescript @cdktf/provider-aws"
         },
         {
           "exec": "npx projen"
