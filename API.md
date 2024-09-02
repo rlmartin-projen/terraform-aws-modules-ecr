@@ -1,4 +1,3 @@
-# replace this
 # API Reference <a name="API Reference" id="api-reference"></a>
 
 ## Constructs <a name="Constructs" id="Constructs"></a>
@@ -232,6 +231,7 @@ Ecr.isTerraformElement(x: any)
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.Ecr.property.publicRepositoryCatalogData">publicRepositoryCatalogData</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.Ecr.property.registryReplicationRules">registryReplicationRules</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.Ecr.property.registryScanRules">registryScanRules</a></code> | <code>any</code> | *No description.* |
+| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.Ecr.property.repositoryPolicyStatements">repositoryPolicyStatements</a></code> | <code>any</code> | *No description.* |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.Ecr.property.attachRepositoryPolicy">attachRepositoryPolicy</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.Ecr.property.create">create</a></code> | <code>boolean</code> | *No description.* |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.Ecr.property.createLifecyclePolicy">createLifecyclePolicy</a></code> | <code>boolean</code> | *No description.* |
@@ -415,6 +415,16 @@ public readonly registryReplicationRules: any;
 
 ```typescript
 public readonly registryScanRules: any;
+```
+
+- *Type:* any
+
+---
+
+##### `repositoryPolicyStatements`<sup>Required</sup> <a name="repositoryPolicyStatements" id="@rlmartin-projen/terraform-aws-modules-ecr.Ecr.property.repositoryPolicyStatements"></a>
+
+```typescript
+public readonly repositoryPolicyStatements: any;
 ```
 
 - *Type:* any
@@ -682,33 +692,34 @@ const ecrConfig: EcrConfig = { ... }
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.forEach">forEach</a></code> | <code>cdktf.ITerraformIterator</code> | *No description.* |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.providers">providers</a></code> | <code>cdktf.TerraformProvider \| cdktf.TerraformModuleProvider[]</code> | *No description.* |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.skipAssetCreationFromLocalModules">skipAssetCreationFromLocalModules</a></code> | <code>boolean</code> | *No description.* |
-| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.attachRepositoryPolicy">attachRepositoryPolicy</a></code> | <code>boolean</code> | Determines whether a repository policy will be attached to the repository. |
-| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.create">create</a></code> | <code>boolean</code> | Determines whether resources will be created (affects all resources). |
-| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.createLifecyclePolicy">createLifecyclePolicy</a></code> | <code>boolean</code> | Determines whether a lifecycle policy will be created. |
+| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.attachRepositoryPolicy">attachRepositoryPolicy</a></code> | <code>boolean</code> | Determines whether a repository policy will be attached to the repository true. |
+| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.create">create</a></code> | <code>boolean</code> | Determines whether resources will be created (affects all resources) true. |
+| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.createLifecyclePolicy">createLifecyclePolicy</a></code> | <code>boolean</code> | Determines whether a lifecycle policy will be created true. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.createRegistryPolicy">createRegistryPolicy</a></code> | <code>boolean</code> | Determines whether a registry policy will be created. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.createRegistryReplicationConfiguration">createRegistryReplicationConfiguration</a></code> | <code>boolean</code> | Determines whether a registry replication configuration will be created. |
-| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.createRepository">createRepository</a></code> | <code>boolean</code> | Determines whether a repository will be created. |
-| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.createRepositoryPolicy">createRepositoryPolicy</a></code> | <code>boolean</code> | Determines whether a repository policy will be created. |
+| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.createRepository">createRepository</a></code> | <code>boolean</code> | Determines whether a repository will be created true. |
+| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.createRepositoryPolicy">createRepositoryPolicy</a></code> | <code>boolean</code> | Determines whether a repository policy will be created true. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.manageRegistryScanningConfiguration">manageRegistryScanningConfiguration</a></code> | <code>boolean</code> | Determines whether the registry scanning configuration will be managed. |
-| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.publicRepositoryCatalogData">publicRepositoryCatalogData</a></code> | <code>any</code> | Catalog data configuration for the repository. |
+| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.publicRepositoryCatalogData">publicRepositoryCatalogData</a></code> | <code>any</code> | Catalog data configuration for the repository [object Object]. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.registryPolicy">registryPolicy</a></code> | <code>string</code> | The policy document. |
-| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.registryPullThroughCacheRules">registryPullThroughCacheRules</a></code> | <code>{[ key: string ]: {[ key: string ]: string}}</code> | List of pull through cache rules to create. |
+| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.registryPullThroughCacheRules">registryPullThroughCacheRules</a></code> | <code>{[ key: string ]: {[ key: string ]: string}}</code> | List of pull through cache rules to create [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf /module-map-inputs the docs}. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.registryReplicationRules">registryReplicationRules</a></code> | <code>any</code> | The replication rules for a replication configuration. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.registryScanRules">registryScanRules</a></code> | <code>any</code> | One or multiple blocks specifying scanning rules to determine which repository filters are used and at what frequency scanning will occur. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.registryScanType">registryScanType</a></code> | <code>string</code> | the scanning type to set for the registry. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryEncryptionType">repositoryEncryptionType</a></code> | <code>string</code> | The encryption type for the repository. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryForceDelete">repositoryForceDelete</a></code> | <code>boolean</code> | If `true`, will delete the repository even if it contains images. |
-| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryImageScanOnPush">repositoryImageScanOnPush</a></code> | <code>boolean</code> | Indicates whether images are scanned after being pushed to the repository (`true`) or not scanned (`false`). |
+| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryImageScanOnPush">repositoryImageScanOnPush</a></code> | <code>boolean</code> | Indicates whether images are scanned after being pushed to the repository (`true`) or not scanned (`false`) true. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryImageTagMutability">repositoryImageTagMutability</a></code> | <code>string</code> | The tag mutability setting for the repository. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryKmsKey">repositoryKmsKey</a></code> | <code>string</code> | The ARN of the KMS key to use when encryption_type is `KMS`. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryLambdaReadAccessArns">repositoryLambdaReadAccessArns</a></code> | <code>string[]</code> | The ARNs of the Lambda service roles that have read access to the repository. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryLifecyclePolicy">repositoryLifecyclePolicy</a></code> | <code>string</code> | The policy document. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryName">repositoryName</a></code> | <code>string</code> | The name of the repository. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryPolicy">repositoryPolicy</a></code> | <code>string</code> | The JSON policy to apply to the repository. |
+| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryPolicyStatements">repositoryPolicyStatements</a></code> | <code>any</code> | A map of IAM policy [statements](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document#statement) for custom permission usage [object Object]. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryReadAccessArns">repositoryReadAccessArns</a></code> | <code>string[]</code> | The ARNs of the IAM users/roles that have read access to the repository. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryReadWriteAccessArns">repositoryReadWriteAccessArns</a></code> | <code>string[]</code> | The ARNs of the IAM users/roles that have read/write access to the repository. |
 | <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryType">repositoryType</a></code> | <code>string</code> | The type of repository to create. |
-| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | A map of tags to add to all resources. |
+| <code><a href="#@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.tags">tags</a></code> | <code>{[ key: string ]: string}</code> | A map of tags to add to all resources [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf /module-map-inputs the docs}. |
 
 ---
 
@@ -759,9 +770,8 @@ public readonly attachRepositoryPolicy: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true
 
-Determines whether a repository policy will be attached to the repository.
+Determines whether a repository policy will be attached to the repository true.
 
 ---
 
@@ -772,9 +782,8 @@ public readonly create: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true
 
-Determines whether resources will be created (affects all resources).
+Determines whether resources will be created (affects all resources) true.
 
 ---
 
@@ -785,9 +794,8 @@ public readonly createLifecyclePolicy: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true
 
-Determines whether a lifecycle policy will be created.
+Determines whether a lifecycle policy will be created true.
 
 ---
 
@@ -822,9 +830,8 @@ public readonly createRepository: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true
 
-Determines whether a repository will be created.
+Determines whether a repository will be created true.
 
 ---
 
@@ -835,9 +842,8 @@ public readonly createRepositoryPolicy: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true
 
-Determines whether a repository policy will be created.
+Determines whether a repository policy will be created true.
 
 ---
 
@@ -860,9 +866,8 @@ public readonly publicRepositoryCatalogData: any;
 ```
 
 - *Type:* any
-- *Default:* [object Object]
 
-Catalog data configuration for the repository.
+Catalog data configuration for the repository [object Object].
 
 ---
 
@@ -887,9 +892,8 @@ public readonly registryPullThroughCacheRules: {[ key: string ]: {[ key: string 
 ```
 
 - *Type:* {[ key: string ]: {[ key: string ]: string}}
-- *Default:* [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf /module-map-inputs the docs}
 
-List of pull through cache rules to create.
+List of pull through cache rules to create [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf /module-map-inputs the docs}.
 
 ---
 
@@ -926,11 +930,11 @@ public readonly registryScanType: string;
 ```
 
 - *Type:* string
-- *Default:* ENHANCED
 
 the scanning type to set for the registry.
 
 Can be either `ENHANCED` or `BASIC`
+ENHANCED
 
 ---
 
@@ -969,9 +973,8 @@ public readonly repositoryImageScanOnPush: boolean;
 ```
 
 - *Type:* boolean
-- *Default:* true
 
-Indicates whether images are scanned after being pushed to the repository (`true`) or not scanned (`false`).
+Indicates whether images are scanned after being pushed to the repository (`true`) or not scanned (`false`) true.
 
 ---
 
@@ -982,11 +985,11 @@ public readonly repositoryImageTagMutability: string;
 ```
 
 - *Type:* string
-- *Default:* IMMUTABLE
 
 The tag mutability setting for the repository.
 
 Must be one of: `MUTABLE` or `IMMUTABLE`. Defaults to `IMMUTABLE`
+IMMUTABLE
 
 ---
 
@@ -1056,6 +1059,18 @@ If not specified, uses the default policy
 
 ---
 
+##### `repositoryPolicyStatements`<sup>Optional</sup> <a name="repositoryPolicyStatements" id="@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryPolicyStatements"></a>
+
+```typescript
+public readonly repositoryPolicyStatements: any;
+```
+
+- *Type:* any
+
+A map of IAM policy [statements](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document#statement) for custom permission usage [object Object].
+
+---
+
 ##### `repositoryReadAccessArns`<sup>Optional</sup> <a name="repositoryReadAccessArns" id="@rlmartin-projen/terraform-aws-modules-ecr.EcrConfig.property.repositoryReadAccessArns"></a>
 
 ```typescript
@@ -1087,11 +1102,11 @@ public readonly repositoryType: string;
 ```
 
 - *Type:* string
-- *Default:* private
 
 The type of repository to create.
 
 Either `public` or `private`
+private
 
 ---
 
@@ -1102,9 +1117,8 @@ public readonly tags: {[ key: string ]: string};
 ```
 
 - *Type:* {[ key: string ]: string}
-- *Default:* [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf /module-map-inputs the docs}
 
-A map of tags to add to all resources.
+A map of tags to add to all resources [object Object] The property type contains a map, they have special handling, please see {@link cdk.tf /module-map-inputs the docs}.
 
 ---
 
